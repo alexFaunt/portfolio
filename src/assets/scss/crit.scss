@@ -1,0 +1,40 @@
+* {
+    font-family: Helvetica, Arial, Sans-Serif;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+}
+h1, h2 {
+    display: inline-block;
+    background: rgba(22,22,22,0.55);
+    padding: 10px;
+    color: white;
+}
+a {
+    text-decoration: none;
+}
+.page-wrapper {
+    -webkit-transform: translateZ(0);
+    -moz-transform: translateZ(0);
+    transform: translateZ(0);
+}
+section {
+    padding: 10px;
+}
+.hero {
+    min-height: 100vh;
+    background: #278;
+    opacity: 0.7;
+}
+.hero * {
+    color: white;
+}
+.hero header {
+    text-align: right;
+}
+.hero p {
+    text-align: center;
+}
