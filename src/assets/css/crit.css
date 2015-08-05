@@ -1,59 +1,265 @@
-/* line 1, ../scss/crit.scss */
+/* line 17, ../scss/crit.scss */
 * {
   font-family: Helvetica, Arial, Sans-Serif;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
+  margin-top: 0;
 }
 
-/* line 7, ../scss/crit.scss */
+/* line 25, ../scss/crit.scss */
 body {
   margin: 0;
+  font-size: 14px;
 }
 
-/* line 10, ../scss/crit.scss */
-h1, h2 {
-  display: inline-block;
-  background: rgba(22, 22, 22, 0.55);
-  padding: 10px;
-  color: white;
+/* line 30, ../scss/crit.scss */
+.no-script .script-only {
+  display: none;
 }
 
-/* line 16, ../scss/crit.scss */
-a {
-  text-decoration: none;
-}
-
-/* line 19, ../scss/crit.scss */
-.page-wrapper {
+/* line 34, ../scss/crit.scss */
+.tranz {
   -webkit-transform: translateZ(0);
   -moz-transform: translateZ(0);
   transform: translateZ(0);
 }
 
-/* line 24, ../scss/crit.scss */
-section {
-  padding: 10px;
+/* line 40, ../scss/crit.scss */
+.hidden {
+  display: none;
 }
 
-/* line 27, ../scss/crit.scss */
-.hero {
-  min-height: 100vh;
-  background: #278;
+/* line 44, ../scss/crit.scss */
+.main-colour {
+  color: #64a0ac;
+}
+/* line 47, ../scss/crit.scss */
+.main-colour::after {
+  background: #64a0ac;
+}
+
+/* line 53, ../scss/crit.scss */
+section::before {
+  content: '';
+  position: absolute;
+  display: block;
+}
+
+/* line 61, ../scss/crit.scss */
+h1::after, h2::after, section::after, a::after, .image-link span::after {
+  content: '';
+  position: absolute;
+  display: block;
+}
+
+/* line 68, ../scss/crit.scss */
+section {
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+}
+
+/* line 74, ../scss/crit.scss */
+h1, h2 {
+  display: inline-block;
+  background: rgba(22, 22, 22, 0.5);
+  padding: 10px;
+  color: white;
+  position: relative;
+  margin-bottom: 25px;
+}
+/* line 84, ../scss/crit.scss */
+h1::after, h2::after {
+  left: 0;
+  width: 100%;
+  height: 2px;
+  bottom: -4px;
+  background: rgba(22, 22, 22, 0.5);
+}
+
+/* line 93, ../scss/crit.scss */
+h2 {
+  font-size: 1.3em;
+}
+
+/* line 97, ../scss/crit.scss */
+section {
+  padding: 20px 10px 26px;
+  background: white;
+  position: relative;
+}
+/* line 105, ../scss/crit.scss */
+section::before, section::after {
+  left: 0;
+  width: 100%;
+  background: inherit;
   opacity: 0.7;
 }
-
-/* line 32, ../scss/crit.scss */
-.hero * {
-  color: white;
+/* line 112, ../scss/crit.scss */
+section::before {
+  top: -10px;
+  height: 2px;
+}
+/* line 116, ../scss/crit.scss */
+section::after {
+  top: -4px;
+  height: 2px;
+}
+/* line 121, ../scss/crit.scss */
+section:nth-child(2n) {
+  background: #ececec;
 }
 
-/* line 35, ../scss/crit.scss */
-.hero header {
+/* line 126, ../scss/crit.scss */
+a {
+  text-decoration: none;
+  color: white;
+  position: relative;
+}
+/* line 133, ../scss/crit.scss */
+a::after {
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: white;
+}
+
+/* line 142, ../scss/crit.scss */
+dt, dd {
+  width: 50%;
+  padding: 0 5px;
+}
+
+/* line 146, ../scss/crit.scss */
+dt {
   text-align: right;
 }
 
-/* line 38, ../scss/crit.scss */
+/* line 149, ../scss/crit.scss */
+dd {
+  margin: -1.1em 0 5px 50%;
+}
+
+/* line 153, ../scss/crit.scss */
+.screen-content {
+  max-width: 60em;
+  margin: auto;
+}
+
+/* line 158, ../scss/crit.scss */
+.hero {
+  background: #64a0ac;
+}
+/* line 161, ../scss/crit.scss */
+.hero * {
+  color: white;
+}
+/* line 165, ../scss/crit.scss */
+.hero h1, .hero h2 {
+  background: rgba(22, 22, 22, 0.3);
+}
+/* line 167, ../scss/crit.scss */
+.hero h1::after, .hero h2::after {
+  background: rgba(22, 22, 22, 0.3);
+}
+/* line 172, ../scss/crit.scss */
+.hero header {
+  text-align: right;
+}
+/* line 176, ../scss/crit.scss */
 .hero p {
   text-align: center;
+}
+
+/* line 182, ../scss/crit.scss */
+.page-nav {
+  margin: -10px 0 20px;
+}
+
+/* line 186, ../scss/crit.scss */
+.image-link {
+  display: block;
+  position: relative;
+  height: 50px;
+  margin-bottom: 10px;
+}
+/* line 192, ../scss/crit.scss */
+.image-link::after {
+  display: none;
+}
+/* line 196, ../scss/crit.scss */
+.image-link::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(22, 22, 22, 0.3);
+}
+/* line 206, ../scss/crit.scss */
+.image-link span {
+  position: absolute;
+  left: 10px;
+  bottom: 10px;
+}
+/* line 212, ../scss/crit.scss */
+.image-link span::after {
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: white;
+}
+
+/* line 222, ../scss/crit.scss */
+article {
+  margin-bottom: 15px;
+}
+/* line 225, ../scss/crit.scss */
+article header {
+  margin-bottom: 10px;
+}
+/* line 228, ../scss/crit.scss */
+article .head {
+  margin-bottom: 0;
+}
+
+@media (max-width: 450px) {
+  /* line 236, ../scss/crit.scss */
+  .image-link {
+    margin-left: -10px;
+    margin-right: -10px;
+    padding: 0 10px;
+  }
+}
+@media (min-width: 450px) {
+  /* line 246, ../scss/crit.scss */
+  article .head {
+    display: inline-block;
+  }
+  /* line 249, ../scss/crit.scss */
+  article .sub-head {
+    float: right;
+  }
+
+  /* line 254, ../scss/crit.scss */
+  .side-links {
+    position: relative;
+    padding-right: 210px;
+    min-height: 150px;
+  }
+  /* line 259, ../scss/crit.scss */
+  .side-links .image-links {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 200px;
+  }
+  /* line 266, ../scss/crit.scss */
+  .side-links .image-link {
+    height: 70px;
+  }
 }

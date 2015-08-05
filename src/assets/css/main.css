@@ -2,3 +2,12 @@
 body {
   zoom: 1;
 }
+
+/* line 6, ../scss/main.scss */
+.image-link {
+  background-size: cover;
+}
+/* line 9, ../scss/main.scss */
+.image-link.badoo {
+  background: url("");
+}

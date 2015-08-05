@@ -2,3 +2,12 @@ body {
     zoom: 1;
 
 }
+
+.image-link {
+    background-size: cover;
+
+    &.badoo {
+        background: url('');
+    }
+
+}
