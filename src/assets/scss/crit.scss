@@ -3,6 +3,9 @@ $grey: #ececec;
 $trans-grey: rgba(22,22,22,0.3);
 $trans-grey-2: rgba(22,22,22,0.5);
 
+$hero-image-size-small: 41px;
+$hero-image-size: 200px;
+
 $section-padding-horiz: 10px;
 $section-padding-vert: 20px;
 
@@ -65,12 +68,6 @@ body {
     }
 }
 
-%content-box {
-    -webkit-box-sizing: content-box;
-    -moz-box-sizing: content-box;
-    box-sizing: content-box;
-}
-
 h1, h2 {
     display: inline-block;
     background: $trans-grey-2;
@@ -98,7 +95,9 @@ section {
     padding: $section-padding-vert $section-padding-horiz ($section-padding-vert + 6px); // 6px is the overlap of next section
     background: white;
     position: relative;
-    @extend %content-box;
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
     @extend %abs-before;
     @extend %abs-after;
 
@@ -172,11 +171,20 @@ dd {
     header {
         text-align: right;
     }
-
-    p {
-        text-align: center;
-    }
-
+}
+.hero-content {
+    position: relative;
+}
+.hero-image {
+    background: red;
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: $hero-image-size-small;
+    width: $hero-image-size-small;
+}
+.hero-content-header {
+    display: inline-block;
 }
 
 .page-nav {
@@ -232,15 +240,28 @@ article {
 
 @media (max-width: $media-query-width-medium) {
 
-
     .image-link {
         margin-left: -$section-padding-horiz;
         margin-right: -$section-padding-horiz;
         padding: 0 $section-padding-horiz;
-        @extend %content-box;
+        -webkit-box-sizing: content-box;
+        -moz-box-sizing: content-box;
+        box-sizing: content-box;
+    }
+
+    .hero p {
+        text-align: center;
+    }
+    .hero-content-header {
+        position: relative;
+
+        h2 {
+            padding-right: $hero-image-size-small + $section-padding-horiz;
+        }
     }
 }
 
+// BP 1
 @media (min-width: $media-query-width-medium) {
     article {
         .head {
@@ -251,21 +272,39 @@ article {
         }
     }
 
+    .article-body {
+        padding-right: $section-padding-horiz;
+    }
+
     .side-links {
         position: relative;
-        padding-right: 200px + $section-padding-horiz;
-        min-height: (2 * $image-link-height-2) + 10px; // gap between is 10px;
+        padding-right: 40%;
+        min-height: (2 * $image-link-height-2) + $section-padding-horiz; // gap between is 10px;
 
         .image-links {
             position: absolute;
             top: 0;
             right: 0;
-            width: 200px;
+            width: 40%;
         }
 
         .image-link {
             height:  $image-link-height-2;
         }
+    }
+
+    // Hero stuff
+    .hero header {
+        text-align: center;
+    }
+    .hero-content {
+        min-height: $hero-image-size;
+        padding-right: $hero-image-size + $section-padding-horiz;
+    }
+    .hero-image {
+        position: absolute;
+        height: $hero-image-size;
+        width: $hero-image-size;
     }
 }
 
