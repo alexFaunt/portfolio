@@ -1,13 +1,38 @@
-/* line 1, ../scss/main.scss */
+/* line 4, ../scss/main.scss */
 body {
   zoom: 1;
 }
 
-/* line 6, ../scss/main.scss */
+/* line 9, ../scss/main.scss */
 .image-link {
   background-size: cover;
 }
-/* line 9, ../scss/main.scss */
+/* line 12, ../scss/main.scss */
 .image-link.badoo {
   background: url("");
+}
+
+/* line 18, ../scss/main.scss */
+.cheev {
+  padding-right: 70px;
+  position: relative;
+}
+/* line 22, ../scss/main.scss */
+.cheev::after {
+  content: '';
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  height: 50px;
+  width: 50px;
+  margin-top: -25px;
+  opacity: 0.5;
+}
+/* line 33, ../scss/main.scss */
+.cheev.enabled {
+  background: rgba(100, 160, 172, 0.6);
+}
+/* line 36, ../scss/main.scss */
+.cheev.enabled::after {
+  opacity: 1;
 }

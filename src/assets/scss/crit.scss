@@ -1,21 +1,5 @@
-$main-colour: #64A0AC;
-$grey: #ececec;
-$trans-grey: rgba(22,22,22,0.3);
-$trans-grey-2: rgba(22,22,22,0.5);
 
-$hero-image-size-small: 41px;
-$hero-image-size: 200px;
-
-$section-padding-horiz: 10px;
-$section-padding-vert: 20px;
-
-$post-line-1-height: 1px;
-$post-line-2-height: 2px;
-
-$media-query-width-medium: 450px;
-
-$image-link-height: 50px;
-$image-link-height-2: 70px;
+@import 'variables';
 
 * {
     font-family: Helvetica, Arial, Sans-Serif;
@@ -41,15 +25,7 @@ body {
 }
 
 .hidden {
-    display: none;
-}
-
-.main-colour {
-    color: $main-colour;
-
-    &::after {
-        background: $main-colour;
-    }
+    display: none !important;
 }
 
 %abs-before {
@@ -70,7 +46,7 @@ body {
 
 h1, h2 {
     display: inline-block;
-    background: $trans-grey-2;
+    background: $trans-grey;
     padding: 10px;
     color: white;
     position: relative;
@@ -83,7 +59,7 @@ h1, h2 {
         width: 100%;
         height: $post-line-2-height;
         bottom: -4px;
-        background: $trans-grey-2;
+        background: $trans-grey;
     }
 }
 
@@ -92,7 +68,7 @@ h2 {
 }
 
 section {
-    padding: $section-padding-vert $section-padding-horiz ($section-padding-vert + 6px); // 6px is the overlap of next section
+    padding: $section-padding-vert $section-padding-horiz;
     background: white;
     position: relative;
     -webkit-box-sizing: content-box;
@@ -150,7 +126,7 @@ dd {
 }
 
 .screen-content {
-    max-width: 60em;
+    max-width: $max-content-width;
     margin: auto;
 }
 
@@ -176,7 +152,7 @@ dd {
     position: relative;
 }
 .hero-image {
-    background: red;
+    background: $trans-grey;
     position: absolute;
     right: 0;
     top: 0;
@@ -195,7 +171,7 @@ dd {
     display: block;
     position: relative;
     height: $image-link-height;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
 
     &::after {
         display: none;
@@ -232,9 +208,93 @@ article {
 
     header {
         margin-bottom: 10px;
+        border-bottom: 1px solid $main-colour;
+        padding: 10px 10px 8px;
+        margin: 0 -10px 10px;
     }
     .head {
         margin-bottom: 0;
+    }
+}
+
+.skill {
+    padding: 10px;
+    position: relative;
+    margin-bottom: 5px;
+    text-shadow: 1px 1px rgba(255,255,255,0.5);
+
+    .value {
+        position: absolute;
+        right: 10px;
+        top: 10px;
+    }
+
+    &[data-value="9"], &[data-value="8"] {
+        background: $skill-colour-top;
+    }
+    &[data-value="7"], &[data-value="6"]  {
+        background: $skill-colour-high;
+    }
+    &[data-value="5"], &[data-value="4"] {
+        background: $skill-colour-med;
+    }
+    &[data-value="3"], &[data-value="2"], &[data-value="1"] {
+        background: $skill-colour-low;
+    }
+
+    &[data-value="9"] {
+        width: 95%;
+    }
+    &[data-value="8"] {
+        width: 90%;
+    }
+    &[data-value="7"] {
+        width: 85%;
+    }
+    &[data-value="6"] {
+        width: 80%;
+    }
+    &[data-value="5"] {
+        width: 75%;
+    }
+    &[data-value="4"] {
+        width: 70%;
+    }
+    &[data-value="3"] {
+        width: 65%;
+    }
+    &[data-value="2"] {
+        width: 60%;
+    }
+    &[data-value="1"] {
+        width: 55%;
+    }
+}
+
+.cheev {
+    padding: $section-padding-horiz;
+    background: $grey;
+    margin: 0 0 5px;
+    min-height: $cheev-icon-size + $section-padding-horiz * 2;
+    padding-right: $cheev-icon-size + $section-padding-horiz * 2;
+    border-bottom: 1px solid $main-colour;
+
+    .name {
+        display: block;
+        font-weight: bold;
+        margin-bottom: $section-padding-horiz;
+    }
+}
+
+.contact {
+    text-align: center;
+}
+.footer-link {
+    color: $main-colour;
+    margin: 0 10px;
+
+    &::after {
+        background: $main-colour;
     }
 }
 
@@ -263,6 +323,14 @@ article {
 
 // BP 1
 @media (min-width: $media-query-width-medium) {
+    .page-nav {
+        text-align: center;
+
+        a {
+            margin: 0 10px;
+        }
+    }
+
     article {
         .head {
             display: inline-block;
@@ -279,7 +347,6 @@ article {
     .side-links {
         position: relative;
         padding-right: 40%;
-        min-height: (2 * $image-link-height-2) + $section-padding-horiz; // gap between is 10px;
 
         .image-links {
             position: absolute;
@@ -290,6 +357,10 @@ article {
 
         .image-link {
             height:  $image-link-height-2;
+        }
+
+        &.two-links {
+            min-height: (2 * $image-link-height-2) + 5px; // gap between is 10px;
         }
     }
 
@@ -306,8 +377,27 @@ article {
         height: $hero-image-size;
         width: $hero-image-size;
     }
+
+    .skill-list {
+        position: relative;
+        padding-right: 50%;
+    }
+    .secondary {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        right: 0;
+        padding-left: 10px;
+    }
 }
 
+@media (min-width: $max-content-width + 2 * $section-padding-horiz) {
+    article header {
+        padding-left: 0;
+        padding-right: 0;
+        margin: 0 0 10px;
+    }
+}
 
 
 

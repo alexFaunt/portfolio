@@ -1,4 +1,4 @@
-/* line 20, ../scss/crit.scss */
+/* line 4, ../scss/crit.scss */
 * {
   font-family: Helvetica, Arial, Sans-Serif;
   -webkit-box-sizing: border-box;
@@ -7,113 +7,104 @@
   margin-top: 0;
 }
 
-/* line 28, ../scss/crit.scss */
+/* line 12, ../scss/crit.scss */
 body {
   margin: 0;
   font-size: 14px;
 }
 
-/* line 33, ../scss/crit.scss */
+/* line 17, ../scss/crit.scss */
 .no-script .script-only {
   display: none;
 }
 
-/* line 37, ../scss/crit.scss */
+/* line 21, ../scss/crit.scss */
 .tranz {
   -webkit-transform: translateZ(0);
   -moz-transform: translateZ(0);
   transform: translateZ(0);
 }
 
-/* line 43, ../scss/crit.scss */
+/* line 27, ../scss/crit.scss */
 .hidden {
-  display: none;
+  display: none !important;
 }
 
-/* line 47, ../scss/crit.scss */
-.main-colour {
-  color: #64a0ac;
-}
-/* line 50, ../scss/crit.scss */
-.main-colour::after {
-  background: #64a0ac;
-}
-
-/* line 56, ../scss/crit.scss */
+/* line 32, ../scss/crit.scss */
 section::before {
   content: '';
   position: absolute;
   display: block;
 }
 
-/* line 64, ../scss/crit.scss */
+/* line 40, ../scss/crit.scss */
 h1::after, h2::after, section::after, a::after, .image-link span::after {
   content: '';
   position: absolute;
   display: block;
 }
 
-/* line 71, ../scss/crit.scss */
+/* line 47, ../scss/crit.scss */
 h1, h2 {
   display: inline-block;
-  background: rgba(22, 22, 22, 0.5);
+  background: rgba(22, 22, 22, 0.3);
   padding: 10px;
   color: white;
   position: relative;
   margin-bottom: 25px;
 }
-/* line 81, ../scss/crit.scss */
+/* line 57, ../scss/crit.scss */
 h1::after, h2::after {
   left: 0;
   width: 100%;
   height: 2px;
   bottom: -4px;
-  background: rgba(22, 22, 22, 0.5);
+  background: rgba(22, 22, 22, 0.3);
 }
 
-/* line 90, ../scss/crit.scss */
+/* line 66, ../scss/crit.scss */
 h2 {
   font-size: 1.3em;
 }
 
-/* line 94, ../scss/crit.scss */
+/* line 70, ../scss/crit.scss */
 section {
-  padding: 20px 10px 26px;
+  padding: 25px 10px;
   background: white;
   position: relative;
   -webkit-box-sizing: content-box;
   -moz-box-sizing: content-box;
   box-sizing: content-box;
 }
-/* line 104, ../scss/crit.scss */
+/* line 80, ../scss/crit.scss */
 section::before, section::after {
   left: 0;
   width: 100%;
   background: inherit;
   opacity: 0.7;
 }
-/* line 111, ../scss/crit.scss */
+/* line 87, ../scss/crit.scss */
 section::before {
   top: -10px;
   height: 2px;
 }
-/* line 115, ../scss/crit.scss */
+/* line 91, ../scss/crit.scss */
 section::after {
   top: -4px;
   height: 2px;
 }
-/* line 120, ../scss/crit.scss */
+/* line 96, ../scss/crit.scss */
 section:nth-child(2n) {
   background: #ececec;
 }
 
-/* line 125, ../scss/crit.scss */
+/* line 101, ../scss/crit.scss */
 a {
   text-decoration: none;
   color: white;
   position: relative;
 }
-/* line 132, ../scss/crit.scss */
+/* line 108, ../scss/crit.scss */
 a::after {
   bottom: 0;
   left: 0;
@@ -122,57 +113,57 @@ a::after {
   background: white;
 }
 
-/* line 141, ../scss/crit.scss */
+/* line 117, ../scss/crit.scss */
 dt, dd {
   width: 50%;
   padding: 0 5px;
 }
 
-/* line 145, ../scss/crit.scss */
+/* line 121, ../scss/crit.scss */
 dt {
   text-align: right;
 }
 
-/* line 148, ../scss/crit.scss */
+/* line 124, ../scss/crit.scss */
 dd {
   margin: -1.1em 0 5px 50%;
 }
 
-/* line 152, ../scss/crit.scss */
+/* line 128, ../scss/crit.scss */
 .screen-content {
-  max-width: 60em;
+  max-width: 840px;
   margin: auto;
 }
 
-/* line 157, ../scss/crit.scss */
+/* line 133, ../scss/crit.scss */
 .hero {
   background: #64a0ac;
 }
-/* line 160, ../scss/crit.scss */
+/* line 136, ../scss/crit.scss */
 .hero * {
   color: white;
 }
-/* line 164, ../scss/crit.scss */
+/* line 140, ../scss/crit.scss */
 .hero h1, .hero h2 {
   background: rgba(22, 22, 22, 0.3);
 }
-/* line 166, ../scss/crit.scss */
+/* line 142, ../scss/crit.scss */
 .hero h1::after, .hero h2::after {
   background: rgba(22, 22, 22, 0.3);
 }
-/* line 171, ../scss/crit.scss */
+/* line 147, ../scss/crit.scss */
 .hero header {
   text-align: right;
 }
 
-/* line 175, ../scss/crit.scss */
+/* line 151, ../scss/crit.scss */
 .hero-content {
   position: relative;
 }
 
-/* line 178, ../scss/crit.scss */
+/* line 154, ../scss/crit.scss */
 .hero-image {
-  background: red;
+  background: rgba(22, 22, 22, 0.3);
   position: absolute;
   right: 0;
   top: 0;
@@ -180,28 +171,28 @@ dd {
   width: 41px;
 }
 
-/* line 186, ../scss/crit.scss */
+/* line 162, ../scss/crit.scss */
 .hero-content-header {
   display: inline-block;
 }
 
-/* line 190, ../scss/crit.scss */
+/* line 166, ../scss/crit.scss */
 .page-nav {
-  margin: -10px 0 20px;
+  margin: -10px 0 25px;
 }
 
-/* line 194, ../scss/crit.scss */
+/* line 170, ../scss/crit.scss */
 .image-link {
   display: block;
   position: relative;
   height: 50px;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
 }
-/* line 200, ../scss/crit.scss */
+/* line 176, ../scss/crit.scss */
 .image-link::after {
   display: none;
 }
-/* line 204, ../scss/crit.scss */
+/* line 180, ../scss/crit.scss */
 .image-link::before {
   content: '';
   position: absolute;
@@ -211,13 +202,13 @@ dd {
   bottom: 0;
   background: rgba(22, 22, 22, 0.3);
 }
-/* line 214, ../scss/crit.scss */
+/* line 190, ../scss/crit.scss */
 .image-link span {
   position: absolute;
   left: 10px;
   bottom: 10px;
 }
-/* line 220, ../scss/crit.scss */
+/* line 196, ../scss/crit.scss */
 .image-link span::after {
   bottom: 0;
   left: 0;
@@ -226,21 +217,121 @@ dd {
   background: white;
 }
 
-/* line 230, ../scss/crit.scss */
+/* line 206, ../scss/crit.scss */
 article {
   margin-bottom: 15px;
 }
-/* line 233, ../scss/crit.scss */
+/* line 209, ../scss/crit.scss */
 article header {
   margin-bottom: 10px;
+  border-bottom: 1px solid #64a0ac;
+  padding: 10px 10px 8px;
+  margin: 0 -10px 10px;
 }
-/* line 236, ../scss/crit.scss */
+/* line 215, ../scss/crit.scss */
 article .head {
   margin-bottom: 0;
 }
 
+/* line 220, ../scss/crit.scss */
+.skill {
+  padding: 10px;
+  position: relative;
+  margin-bottom: 5px;
+  text-shadow: 1px 1px rgba(255, 255, 255, 0.5);
+}
+/* line 226, ../scss/crit.scss */
+.skill .value {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
+/* line 232, ../scss/crit.scss */
+.skill[data-value="9"], .skill[data-value="8"] {
+  background: #93cb9c;
+}
+/* line 235, ../scss/crit.scss */
+.skill[data-value="7"], .skill[data-value="6"] {
+  background: #d4e29b;
+}
+/* line 238, ../scss/crit.scss */
+.skill[data-value="5"], .skill[data-value="4"] {
+  background: #fef598;
+}
+/* line 241, ../scss/crit.scss */
+.skill[data-value="3"], .skill[data-value="2"], .skill[data-value="1"] {
+  background: #f9cd8f;
+}
+/* line 245, ../scss/crit.scss */
+.skill[data-value="9"] {
+  width: 95%;
+}
+/* line 248, ../scss/crit.scss */
+.skill[data-value="8"] {
+  width: 90%;
+}
+/* line 251, ../scss/crit.scss */
+.skill[data-value="7"] {
+  width: 85%;
+}
+/* line 254, ../scss/crit.scss */
+.skill[data-value="6"] {
+  width: 80%;
+}
+/* line 257, ../scss/crit.scss */
+.skill[data-value="5"] {
+  width: 75%;
+}
+/* line 260, ../scss/crit.scss */
+.skill[data-value="4"] {
+  width: 70%;
+}
+/* line 263, ../scss/crit.scss */
+.skill[data-value="3"] {
+  width: 65%;
+}
+/* line 266, ../scss/crit.scss */
+.skill[data-value="2"] {
+  width: 60%;
+}
+/* line 269, ../scss/crit.scss */
+.skill[data-value="1"] {
+  width: 55%;
+}
+
+/* line 274, ../scss/crit.scss */
+.cheev {
+  padding: 10px;
+  background: #ececec;
+  margin: 0 0 5px;
+  min-height: 70px;
+  padding-right: 70px;
+  border-bottom: 1px solid #64a0ac;
+}
+/* line 282, ../scss/crit.scss */
+.cheev .name {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+/* line 289, ../scss/crit.scss */
+.contact {
+  text-align: center;
+}
+
+/* line 292, ../scss/crit.scss */
+.footer-link {
+  color: #64a0ac;
+  margin: 0 10px;
+}
+/* line 296, ../scss/crit.scss */
+.footer-link::after {
+  background: #64a0ac;
+}
+
 @media (max-width: 450px) {
-  /* line 243, ../scss/crit.scss */
+  /* line 303, ../scss/crit.scss */
   .image-link {
     margin-left: -10px;
     margin-right: -10px;
@@ -250,69 +341,103 @@ article .head {
     box-sizing: content-box;
   }
 
-  /* line 252, ../scss/crit.scss */
+  /* line 312, ../scss/crit.scss */
   .hero p {
     text-align: center;
   }
 
-  /* line 255, ../scss/crit.scss */
+  /* line 315, ../scss/crit.scss */
   .hero-content-header {
     position: relative;
-    display: inline-block;
   }
-  /* line 259, ../scss/crit.scss */
+  /* line 318, ../scss/crit.scss */
   .hero-content-header h2 {
     padding-right: 51px;
   }
 }
 @media (min-width: 450px) {
-  /* line 268, ../scss/crit.scss */
+  /* line 326, ../scss/crit.scss */
+  .page-nav {
+    text-align: center;
+  }
+  /* line 329, ../scss/crit.scss */
+  .page-nav a {
+    margin: 0 10px;
+  }
+
+  /* line 335, ../scss/crit.scss */
   article .head {
     display: inline-block;
   }
-  /* line 271, ../scss/crit.scss */
+  /* line 338, ../scss/crit.scss */
   article .sub-head {
     float: right;
   }
 
-  /* line 276, ../scss/crit.scss */
+  /* line 343, ../scss/crit.scss */
   .article-body {
     padding-right: 10px;
   }
 
-  /* line 280, ../scss/crit.scss */
+  /* line 347, ../scss/crit.scss */
   .side-links {
     position: relative;
     padding-right: 40%;
-    min-height: 150px;
   }
-  /* line 285, ../scss/crit.scss */
+  /* line 351, ../scss/crit.scss */
   .side-links .image-links {
     position: absolute;
     top: 0;
     right: 0;
     width: 40%;
   }
-  /* line 292, ../scss/crit.scss */
+  /* line 358, ../scss/crit.scss */
   .side-links .image-link {
     height: 70px;
   }
+  /* line 362, ../scss/crit.scss */
+  .side-links.two-links {
+    min-height: 145px;
+  }
 
-  /* line 298, ../scss/crit.scss */
+  /* line 368, ../scss/crit.scss */
   .hero header {
     text-align: center;
   }
 
-  /* line 301, ../scss/crit.scss */
+  /* line 371, ../scss/crit.scss */
   .hero-content {
     min-height: 200px;
     padding-right: 210px;
   }
 
-  /* line 305, ../scss/crit.scss */
+  /* line 375, ../scss/crit.scss */
   .hero-image {
     position: absolute;
     height: 200px;
     width: 200px;
+  }
+
+  /* line 381, ../scss/crit.scss */
+  .skill-list {
+    position: relative;
+    padding-right: 50%;
+  }
+
+  /* line 385, ../scss/crit.scss */
+  .secondary {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    right: 0;
+    padding-left: 10px;
+  }
+}
+@media (min-width: 860px) {
+  /* line 395, ../scss/crit.scss */
+  article header {
+    padding-left: 0;
+    padding-right: 0;
+    margin: 0 0 10px;
   }
 }

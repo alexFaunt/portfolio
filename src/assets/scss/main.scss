@@ -1,3 +1,6 @@
+
+@import 'variables';
+
 body {
     zoom: 1;
 
@@ -10,4 +13,77 @@ body {
         background: url('');
     }
 
+}
+
+.cheev {
+    padding-right: $cheev-icon-size + $section-padding-horiz * 2;
+    position: relative;
+
+    &::after {
+        content: '';
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        height: $cheev-icon-size;
+        width: $cheev-icon-size;
+        margin-top: -0.5 * $cheev-icon-size;
+        opacity: 0.5;
+    }
+
+    &.enabled {
+        background: $main-colour-trans;
+
+        &::after {
+            opacity: 1;
+        }
+    }
+
+    &.visit-1 {
+
+    }
+    &.visit-2 {
+
+    }
+    &.visit-3 {
+
+    }
+    &.stay-1 {
+
+    }
+    &.stay-2 {
+
+    }
+    &.stay-3 {
+
+    }
+    &.cartographer {
+
+    }
+    &.trigger {
+
+    }
+    &.time {
+
+    }
+    &.perfect {
+
+    }
+    &.name {
+
+    }
+    &.turtle {
+
+    }
+    &.email {
+
+    }
+    &.business {
+
+    }
+    &.spin {
+
+    }
+    &.hacker {
+
+    }
 }
