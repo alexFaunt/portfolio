@@ -83,9 +83,17 @@ module.exports = function(grunt) {
                 files: [
                     {
                         expand: true,
-                        cwd: 'src/assets/img/sprites/',
+                        cwd: 'src/assets/img/*',
                         src: ['**'],
-                        dest: 'build/assets/img/sprites/'
+                        dest: 'build/assets/img/*'
+                    },
+                    {
+                        src: ['src/assets/css/main.css'],
+                        dest: 'build/assets/css/main.css'
+                    },
+                    {
+                        src: ['src/assets/js/main.js'],
+                        dest: 'build/assets/js/main.js'
                     }
                ]
             },
@@ -127,6 +135,12 @@ module.exports = function(grunt) {
                 }
             },
         },
+        svg_sprite: {
+            your_target: {
+                src: ['assets/img/icons/*.svg'],
+                dest: 'assets/img/sprites/'
+            },
+        },
 
     });
 
@@ -139,6 +153,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-contrib-htmlmin');
     grunt.loadNpmTasks('grunt-processhtml');
+    grunt.loadNpmTasks('grunt-svg-sprite');
 
     // watch task
     var watchScripts = Object.create(null);
@@ -157,6 +172,8 @@ module.exports = function(grunt) {
         }
     });
 
+
+    // grunt.registerTask('sprites', ['svg_sprite:your_target']);
 
     // build tasks
     grunt.registerTask('build', ['clean:cleanup', 'clean:build', 'jshint', 'uglify:main', 'compass:build', 'copy:main', 'processhtml:dist', 'htmlmin:dist', 'clean:cleanup']);

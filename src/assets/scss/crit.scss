@@ -46,11 +46,12 @@ body {
 
 h1, h2 {
     display: inline-block;
-    background: $trans-grey;
+    background: $main-colour;
     padding: 10px;
     color: white;
     position: relative;
     margin-bottom: 25px;
+    text-shadow: $text-shadow-offset $text-shadow-offset $half-black;
 
     @extend %abs-after;
 
@@ -59,7 +60,7 @@ h1, h2 {
         width: 100%;
         height: $post-line-2-height;
         bottom: -4px;
-        background: $trans-grey;
+        background: $main-colour;
     }
 }
 
@@ -135,6 +136,7 @@ dd {
 
     * {
         color: white;
+        text-shadow: $text-shadow-offset $text-shadow-offset $half-black;
     }
 
     h1, h2 {
@@ -165,6 +167,18 @@ dd {
 
 .page-nav {
     margin: -10px 0 $section-padding-vert;
+
+    @media (min-width: 340px) {
+        a {
+            margin-right: 10px;
+        }
+    }
+    @media (min-width: 400px) {
+        text-align: center;
+        a {
+            margin: 0 10px;
+        }
+    }
 }
 
 .image-link {
@@ -192,6 +206,7 @@ dd {
         left: $section-padding-horiz;
         bottom: $section-padding-horiz;
         @extend %abs-after;
+        text-shadow: $text-shadow-offset $text-shadow-offset $half-black;
 
         &::after {
             bottom: 0;
@@ -221,7 +236,7 @@ article {
     padding: 10px;
     position: relative;
     margin-bottom: 5px;
-    text-shadow: 1px 1px rgba(255,255,255,0.5);
+    text-shadow: $text-shadow-offset $text-shadow-offset $half-white;
 
     .value {
         position: absolute;
@@ -291,14 +306,23 @@ article {
 }
 .footer-link {
     color: $main-colour;
+    text-shadow: $text-shadow-offset $text-shadow-offset $half-white;
     margin: 0 10px;
 
     &::after {
         background: $main-colour;
     }
 }
+.lisence {
+    font-size: 10px;
+    padding: 4px;
+    color: #000;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
 
-@media (max-width: $media-query-width-medium) {
+@media (max-width: $media-query-width-medium - 1) {
 
     .image-link {
         margin-left: -$section-padding-horiz;
@@ -312,25 +336,10 @@ article {
     .hero p {
         text-align: center;
     }
-    .hero-content-header {
-        position: relative;
-
-        h2 {
-            padding-right: $hero-image-size-small + $section-padding-horiz;
-        }
-    }
 }
 
 // BP 1
 @media (min-width: $media-query-width-medium) {
-    .page-nav {
-        text-align: center;
-
-        a {
-            margin: 0 10px;
-        }
-    }
-
     article {
         .head {
             display: inline-block;

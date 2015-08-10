@@ -1,18 +1,40 @@
 
 @import 'variables';
+@import 'mixins';
 
-body {
-    zoom: 1;
-
+.hero-image {
+    background-size: cover;
+    @include image('profile.jpg');
 }
 
 .image-link {
     background-size: cover;
 
-    &.badoo {
-        background: url('');
+    &.center {
+        background-position: center;
     }
 
+    &.badoo {
+        @include image('badoo.jpg');
+    }
+    &.hon {
+        @include image('hon.jpg');
+    }
+    &.tfl {
+        @include image('tfl.jpg');
+    }
+    &.ps {
+        @include image('ps.jpg');
+    }
+    &.wasabi {
+        @include image('wasabi.jpg');
+    }
+    &.formulae {
+        @include image('sublime.jpg');
+    }
+    &.fast {
+        @include image('fast.jpg');
+    }
 }
 
 .cheev {
@@ -32,58 +54,77 @@ body {
 
     &.enabled {
         background: $main-colour-trans;
+        text-shadow: $text-shadow-offset $text-shadow-offset $half-white;
 
         &::after {
             opacity: 1;
         }
     }
 
-    &.visit-1 {
-
+    &.visit-1::after {
+        content: 'x1';
+        font-size: $cheev-icon-size - 20px;
+        line-height: $cheev-icon-size;
+        text-align: center;
+        font-weight: 100;
     }
-    &.visit-2 {
-
+    &.visit-2::after {
+        content: 'x3';
+        font-size: $cheev-icon-size - 20px;
+        line-height: $cheev-icon-size;
+        text-align: center;
+        font-weight: 100;
     }
-    &.visit-3 {
-
+    &.visit-3::after {
+        content: 'x10';
+        font-size: $cheev-icon-size - 20px;
+        line-height: $cheev-icon-size;
+        text-align: center;
+        font-weight: 100;
     }
-    &.stay-1 {
-
+    &.stay-1::after {
+        @include icon('stay');
     }
-    &.stay-2 {
-
+    &.stay-2::after {
+        @include icon('stay');
+        -webkit-transform: rotate(40deg);
+        -moz-transform: rotate(40deg);
+        transform: rotate(40deg);
     }
-    &.stay-3 {
-
+    &.stay-3::after {
+        @include icon('stay');
+        -webkit-transform: rotate(90deg);
+        -moz-transform: rotate(90deg);
+        transform: rotate(90deg);
     }
-    &.cartographer {
-
+    &.cartographer::after {
+        @include icon('cartographer');
     }
-    &.trigger {
-
+    &.trigger::after {
+        @include icon('trigger');
     }
-    &.time {
-
+    &.time::after {
+        @include icon('time');
     }
-    &.perfect {
-
+    &.perfect::after {
+        @include icon('perfect');
     }
-    &.name {
-
+    &.name::after {
+        @include icon('name');
     }
-    &.turtle {
-
+    &.turtle::after {
+        @include icon('turtle');
     }
-    &.email {
-
+    &.email::after {
+        @include icon('email');
     }
-    &.business {
-
+    &.business::after {
+        @include icon('business');
     }
-    &.spin {
-
+    &.spin::after {
+        @include icon('spin');
     }
-    &.hacker {
-
+    &.hacker::after {
+        @include icon('hacker');
     }
 }
