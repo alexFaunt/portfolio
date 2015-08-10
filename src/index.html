@@ -320,11 +320,15 @@
 
         </main>
 
+        <!-- TODO - put this in a js file and minify in build step' -->
         <script>
             document.body.className = '';
             (function () {var s=window.document.styleSheets,t=window.document.querySelector('link[media="only x"]'),h=t.href,c=function(){for(var i=0;i<s.length;i++){if(s[i].href&&s[i].href.indexOf(h)>-1){t.media = "all";return;}};setTimeout(c);};c();})();
         </script>
 
         <script type="text/javascript" src="assets/js/main.js" async></script>
+
+        <!-- TODO - put this in a js file and minify in build step -->
+        <script type="text/javascript" src="assets/js/ga.js" async></script>
     </body>
 </html>
