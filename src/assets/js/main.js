@@ -2,6 +2,7 @@
     'use strict';
 
     const APP_NAME = 'portfolio';
+    const VERSION = 1;
 
     const EVENTS = {
         CLICK: 'click',
@@ -18,12 +19,21 @@
             this.queue = {};
             this.data = null;
             this.timeout = null;
+
+            this.removeOld();
+        }
+
+        // Kill all the old ones.
+        removeOld () {
+            for (let i = 0; i < VERSION; i += 1) {
+                this.store.removeItem(APP_NAME + i);
+            }
         }
 
         get (id) {
             // If we haven't got the data yet - get it from storage.
             if (this.data === null) {
-                const data = this.store.getItem(APP_NAME);
+                const data = this.store.getItem(APP_NAME + VERSION);
 
                 // What did we get from storage
                 if (data) {
@@ -54,7 +64,7 @@
         }
 
         flush () {
-            this.store.setItem(APP_NAME, JSON.stringify(this.data));
+            this.store.setItem(APP_NAME + VERSION, JSON.stringify(this.data));
         }
     }
 
