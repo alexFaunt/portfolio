@@ -232,7 +232,7 @@
     }
 
     cheevs[CHEEV_IDS.TRIGGER] = new ClickCheev(CHEEV_IDS.TRIGGER, {
-        count: 100,
+        count: 30,
         targets: [document]
     });
 

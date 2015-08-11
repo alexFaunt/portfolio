@@ -11,7 +11,7 @@ module.exports = function(grunt) {
             },
             main: {
                 src: [
-                    'src/assets/js/main.js'
+                    'build/assets/js/main.js'
                 ],
                 dest: 'build/assets/js/main.js'
             }
@@ -90,10 +90,6 @@ module.exports = function(grunt) {
                     {
                         src: ['src/assets/css/main.css'],
                         dest: 'build/assets/css/main.css'
-                    },
-                    {
-                        src: ['src/assets/js/main.js'],
-                        dest: 'build/assets/js/main.js'
                     }
                ]
             },
@@ -141,6 +137,14 @@ module.exports = function(grunt) {
                 dest: 'assets/img/sprites/'
             },
         },
+        babel: {
+            dist: {
+                files: {
+                    'build/assets/js/main.js': 'src/assets/js/main.js'
+                },
+                compact: true
+            }
+        }
 
     });
 
@@ -154,6 +158,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-htmlmin');
     grunt.loadNpmTasks('grunt-processhtml');
     grunt.loadNpmTasks('grunt-svg-sprite');
+    grunt.loadNpmTasks('grunt-babel');
 
     // watch task
     var watchScripts = Object.create(null);
@@ -176,7 +181,7 @@ module.exports = function(grunt) {
     // grunt.registerTask('sprites', ['svg_sprite:your_target']);
 
     // build tasks
-    grunt.registerTask('build', ['clean:cleanup', 'clean:build', 'jshint', 'uglify:main', 'compass:build', 'copy:main', 'processhtml:dist', 'htmlmin:dist', 'clean:cleanup']);
+    grunt.registerTask('build', ['clean:cleanup', 'clean:build', 'jshint', 'babel:dist', 'uglify:main', 'compass:build', 'copy:main', 'processhtml:dist', 'htmlmin:dist', 'clean:cleanup']);
 
     // Default task.
     grunt.registerTask('default', ['connect', 'compass:dev', 'watch']);
