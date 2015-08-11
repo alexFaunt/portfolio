@@ -63,10 +63,10 @@
                                 <p>During my time here I've worked on some great features and restructured large amounts of our app to improve extensibility and modularity</p>
                             </div>
                             <div class="image-links">
-                                <a class="image-link center badoo" href="http://m.badoo.com">
+                                <a class="image-link center badoo" data-cheev-click="business" href="http://m.badoo.com" target="_blank">
                                     <span>Badoo</span>
                                 </a>
-                                <a class="image-link center hon" href="http://m.hotornot.com">
+                                <a class="image-link center hon" data-cheev-click="business" href="http://m.hotornot.com" target="_blank">
                                     <span>Hot or Not</span>
                                 </a>
                             </div>
@@ -85,10 +85,10 @@
                                 <p>I was blessed with wide range of projects, working with Transport for London, Sony Playstation, Vodafone, AXA and select government clients.</p>
                             </div>
                             <div class="image-links">
-                                <a class="image-link tfl" href="http://tfl.gov.uk">
+                                <a class="image-link tfl" data-cheev-click="business" href="http://tfl.gov.uk" target="_blank">
                                     <span>Transport for London</span>
                                 </a>
-                                <a class="image-link ps" href="http://playstation.com">
+                                <a class="image-link ps" data-cheev-click="business" href="http://playstation.com" target="_blank">
                                     <span>Playstation</span>
                                 </a>
                             </div>
@@ -189,7 +189,7 @@
                                 <p>Still in the early stages, I have created a javascript way to define my database in JSON and populate.</p>
                             </div>
                             <div class="image-links">
-                                <a class="image-link formulae" href="http://github.com/formulaE">
+                                <a class="image-link formulae" data-cheev-click="business" href="http://github.com/formulaE" target="_blank">
                                     <span>Formula E</span>
                                 </a>
                             </div>
@@ -209,7 +209,7 @@
                                 <p>I concluded that Web Components although useful are not the most flexible, and are limited in their practical use. I did however like socket.io and hello.js.</p>
                             </div>
                             <div class="image-links">
-                                <a class="image-link wasabi" href="http://salty-earth-9989.herokuapp.com/">
+                                <a class="image-link wasabi" data-cheev-click="business" href="http://salty-earth-9989.herokuapp.com/" target="_blank">
                                     <span>Wasabi</span>
                                 </a>
                             </div>
@@ -228,7 +228,7 @@
                                 <p>I was not a fan of angular, although powerful, I was not happy with the restrictions and so stopped upon surprising announcement of Angular 2 breaking BC.</p>
                             </div>
                             <div class="image-links">
-                                <a class="image-link fast" href="http://github.com/fast-angular">
+                                <a class="image-link fast" data-cheev-click="business" href="http://github.com/fast-angular" target="_blank">
                                     <span>Fast</span>
                                 </a>
                             </div>
@@ -259,15 +259,19 @@
                     </div>
                     <div id="stay-2" class="cheev stay-2">
                         <span class="name">Tick tick tick tick BOOM!</span>
-                        <span class="description">Remain on the site for 1 hour.</span>
+                        <span class="description">Remain on the site for 15 minutes.</span>
                     </div>
                     <div id="stay-3" class="cheev stay-3">
                         <span class="name">It didn't take this long to build...</span>
-                        <span class="description">Remain on the site for 3 hours.</span>
+                        <span class="description">Remain on the site for an hour.</span>
                     </div>
                     <div id="cartographer" class="cheev cartographer">
                         <span class="name">The Cartographer.</span>
                         <span class="description">Reach the bottom of the site.</span>
+                    </div>
+                    <div id="hobbit" class="cheev cartographer">
+                        <span class="name">A Hobbits Tale.</span>
+                        <span class="description">There and back again.</span>
                     </div>
                     <div id="trigger" class="cheev trigger">
                         <span class="name">Trigger Happy.</span>
@@ -310,11 +314,11 @@
 
             <section id="book" class="contact">
                 <div class="screen-content">
-                    <a class="footer-link" href="mailto:shopfaunt321@hotmail.com?Subject=Nice%20website!">Email me</a>
-                    <a class="footer-link" href="https://uk.linkedin.com/pub/alex-faunt/85/577/223"/>Linked in</a>
-                    <a class="footer-link" href="https://github.com/alexFaunt">GitHub</a>
+                    <a class="footer-link" href="mailto:shopfaunt321@hotmail.com?Subject=Nice%20website!" target="_blank" data-cheev-click="email">Email me</a>
+                    <a class="footer-link" href="https://uk.linkedin.com/pub/alex-faunt/85/577/223" target="_blank" data-cheev-click="email">Linked in</a>
+                    <a class="footer-link" href="https://github.com/alexFaunt" target="_blank" data-cheev-click="email">GitHub</a>
 
-                    <a class="lisence" href="http://www.flaticon.com/">icons designed by Freepik</a>
+                    <a class="lisence" href="http://www.flaticon.com/" target="_blank" data-cheev-click="email">icons designed by Freepik</a>
                 </div>
             </section>
 
@@ -329,6 +333,14 @@
         <script type="text/javascript" src="assets/js/main.js" async></script>
 
         <!-- TODO - put this in a js file and minify in build step -->
-        <script type="text/javascript" src="assets/js/ga.js" async></script>
+        <script type="text/javascript">
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+            ga('create', 'UA-66177615-1', 'auto');
+            ga('send', 'pageview');
+        </script>
     </body>
 </html>
