@@ -28,8 +28,8 @@ module.exports = function(grunt) {
                 globals: {
                     jQuery: true,
                     angular: true
-
-                }
+                },
+                esnext: true
             }
         },
 

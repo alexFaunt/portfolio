@@ -10,6 +10,7 @@
   "license": "ISC",
   "devDependencies": {
     "grunt": "~0.4.2",
+    "grunt-babel": "^5.0.1",
     "grunt-contrib-clean": "^0.6.0",
     "grunt-contrib-compass": "~0.7.2",
     "grunt-contrib-connect": "^0.8.0",
