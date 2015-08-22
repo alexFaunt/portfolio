@@ -8,3 +8,9 @@
     background-repeat: no-repeat;
     background-size: contain;
 }
+
+@mixin transform ($val) {
+    -webkit-transform: $val;
+    -moz-transform: $val;
+    transform: $val;
+}

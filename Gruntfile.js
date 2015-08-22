@@ -90,6 +90,10 @@ module.exports = function(grunt) {
                     {
                         src: ['src/assets/css/main.css'],
                         dest: 'build/assets/css/main.css'
+                    },
+                    {
+                        src: '*.ico',
+                        dest: 'build/*.ico'
                     }
                ]
             },

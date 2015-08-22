@@ -59,7 +59,7 @@
 }
 /* line 55, ../scss/main.scss */
 .cheev.enabled {
-  background: rgba(100, 160, 172, 0.6);
+  background: #b2d6b1;
   text-shadow: 1px 1px rgba(255, 255, 255, 0.5);
 }
 /* line 59, ../scss/main.scss */
@@ -105,7 +105,7 @@
   -moz-transform: rotate(40deg);
   transform: rotate(40deg);
 }
-/* line 94, ../scss/main.scss */
+/* line 92, ../scss/main.scss */
 .cheev.stay-3::after {
   background-image: url("/assets/img/icons/stay.svg");
   background-repeat: no-repeat;
@@ -114,63 +114,219 @@
   -moz-transform: rotate(90deg);
   transform: rotate(90deg);
 }
-/* line 100, ../scss/main.scss */
+/* line 96, ../scss/main.scss */
 .cheev.cartographer::after {
   background-image: url("/assets/img/icons/cartographer.svg");
   background-repeat: no-repeat;
   background-size: contain;
 }
-/* line 103, ../scss/main.scss */
+/* line 99, ../scss/main.scss */
 .cheev.trigger::after {
   background-image: url("/assets/img/icons/trigger.svg");
   background-repeat: no-repeat;
   background-size: contain;
 }
-/* line 106, ../scss/main.scss */
+/* line 102, ../scss/main.scss */
 .cheev.time::after {
   background-image: url("/assets/img/icons/time.svg");
   background-repeat: no-repeat;
   background-size: contain;
 }
-/* line 109, ../scss/main.scss */
+/* line 105, ../scss/main.scss */
 .cheev.perfect::after {
   background-image: url("/assets/img/icons/perfect.svg");
   background-repeat: no-repeat;
   background-size: contain;
 }
-/* line 112, ../scss/main.scss */
+/* line 108, ../scss/main.scss */
 .cheev.name::after {
   background-image: url("/assets/img/icons/name.svg");
   background-repeat: no-repeat;
   background-size: contain;
 }
-/* line 115, ../scss/main.scss */
+/* line 111, ../scss/main.scss */
 .cheev.turtle::after {
   background-image: url("/assets/img/icons/turtle.svg");
   background-repeat: no-repeat;
   background-size: contain;
 }
-/* line 118, ../scss/main.scss */
+/* line 114, ../scss/main.scss */
 .cheev.email::after {
   background-image: url("/assets/img/icons/email.svg");
   background-repeat: no-repeat;
   background-size: contain;
 }
-/* line 121, ../scss/main.scss */
+/* line 117, ../scss/main.scss */
 .cheev.business::after {
   background-image: url("/assets/img/icons/business.svg");
   background-repeat: no-repeat;
   background-size: contain;
 }
-/* line 124, ../scss/main.scss */
+/* line 120, ../scss/main.scss */
 .cheev.spin::after {
   background-image: url("/assets/img/icons/spin.svg");
   background-repeat: no-repeat;
   background-size: contain;
 }
-/* line 127, ../scss/main.scss */
+/* line 123, ../scss/main.scss */
 .cheev.hacker::after {
   background-image: url("/assets/img/icons/hacker.svg");
   background-repeat: no-repeat;
   background-size: contain;
+}
+
+/* line 128, ../scss/main.scss */
+.secret-turtle {
+  background-image: url("/assets/img/icons/turtle.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: absolute;
+  left: 22px;
+  bottom: 16px;
+  height: 50px;
+  width: 50px;
+  opacity: 0.1;
+  -webkit-transform: scale(0.3);
+  -moz-transform: scale(0.3);
+  transform: scale(0.3);
+}
+
+@-webkit-keyframes toast-anim {
+  /* line 144, ../scss/main.scss */
+  0% {
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+
+  /* line 148, ../scss/main.scss */
+  20% {
+    -webkit-transform: translate3d(0, -100%, 0);
+    -moz-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0);
+  }
+
+  /* line 152, ../scss/main.scss */
+  80% {
+    -webkit-transform: translate3d(0, -100%, 0);
+    -moz-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0);
+  }
+
+  /* line 156, ../scss/main.scss */
+  100% {
+    -webkit-transform: translate3d(0, 0%, 0);
+    -moz-transform: translate3d(0, 0%, 0);
+    transform: translate3d(0, 0%, 0);
+  }
+}
+
+@-webkit-keyframes toast-anim-desktop {
+  /* line 162, ../scss/main.scss */
+  0% {
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+
+  /* line 166, ../scss/main.scss */
+  20% {
+    -webkit-transform: translate3d(-100%, 0, 0);
+    -moz-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0);
+  }
+
+  /* line 170, ../scss/main.scss */
+  80% {
+    -webkit-transform: translate3d(-100%, 0, 0);
+    -moz-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0);
+  }
+
+  /* line 174, ../scss/main.scss */
+  100% {
+    -webkit-transform: translate3d(0, 0%, 0);
+    -moz-transform: translate3d(0, 0%, 0);
+    transform: translate3d(0, 0%, 0);
+  }
+}
+
+/* line 180, ../scss/main.scss */
+.toast-container {
+  position: fixed;
+  color: black;
+}
+/* line 184, ../scss/main.scss */
+.toast-container::after {
+  display: none;
+}
+/* line 188, ../scss/main.scss */
+.toast-container .cheev {
+  margin: 0;
+  text-shadow: 1px 1px rgba(255, 255, 255, 0.5);
+}
+/* line 192, ../scss/main.scss */
+.toast-container .cheev::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #b2d6b1;
+  opacity: 0;
+  -webkit-transition: opacity 1.5s ease-in;
+  -moz-transition: opacity 1.5s ease-in;
+  transition: opacity 1.5s ease-in;
+}
+/* line 207, ../scss/main.scss */
+.toast-container .cheev::after {
+  -webkit-transition: opacity 1.5s ease-in;
+  -moz-transition: opacity 1.5s ease-in;
+  transition: opacity 1.5s ease-in;
+}
+/* line 213, ../scss/main.scss */
+.toast-container .cheev span {
+  position: relative;
+}
+/* line 219, ../scss/main.scss */
+.toast-container.show {
+  -webkit-animation-duration: 3s;
+  animation-duration: 3s;
+}
+/* line 224, ../scss/main.scss */
+.toast-container.show .cheev::before, .toast-container.show .cheev::after {
+  opacity: 1;
+}
+
+@media (max-width: 859px) {
+  /* line 232, ../scss/main.scss */
+  .toast-container {
+    top: 100%;
+    left: 0;
+    right: 0;
+  }
+  /* line 237, ../scss/main.scss */
+  .toast-container.show {
+    -webkit-animation-name: toast-anim;
+    animation-name: toast-anim;
+  }
+}
+@media (min-width: 860px) {
+  /* line 246, ../scss/main.scss */
+  .toast-container {
+    top: 30px;
+    width: 400px;
+    left: 100%;
+    border: 1px solid #64a0ac;
+  }
+  /* line 252, ../scss/main.scss */
+  .toast-container .cheev {
+    border: 0 none transparent;
+  }
+  /* line 256, ../scss/main.scss */
+  .toast-container.show {
+    -webkit-animation-name: toast-anim-desktop;
+    animation-name: toast-anim-desktop;
+  }
 }

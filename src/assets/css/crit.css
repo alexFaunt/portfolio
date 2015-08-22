@@ -337,20 +337,21 @@ article .head {
 /* line 304, ../scss/crit.scss */
 .contact {
   text-align: center;
+  padding-bottom: 35px;
 }
 
-/* line 307, ../scss/crit.scss */
+/* line 308, ../scss/crit.scss */
 .footer-link {
   color: #64a0ac;
   text-shadow: 1px 1px rgba(255, 255, 255, 0.5);
   margin: 0 10px;
 }
-/* line 312, ../scss/crit.scss */
+/* line 313, ../scss/crit.scss */
 .footer-link::after {
   background: #64a0ac;
 }
 
-/* line 316, ../scss/crit.scss */
+/* line 317, ../scss/crit.scss */
 .lisence {
   font-size: 10px;
   padding: 4px;
@@ -361,7 +362,7 @@ article .head {
 }
 
 @media (max-width: 449px) {
-  /* line 327, ../scss/crit.scss */
+  /* line 328, ../scss/crit.scss */
   .image-link {
     margin-left: -10px;
     margin-right: -10px;
@@ -371,72 +372,72 @@ article .head {
     box-sizing: content-box;
   }
 
-  /* line 336, ../scss/crit.scss */
+  /* line 337, ../scss/crit.scss */
   .hero p {
     text-align: center;
   }
 }
 @media (min-width: 450px) {
-  /* line 344, ../scss/crit.scss */
+  /* line 345, ../scss/crit.scss */
   article .head {
     display: inline-block;
   }
-  /* line 347, ../scss/crit.scss */
+  /* line 348, ../scss/crit.scss */
   article .sub-head {
     float: right;
   }
 
-  /* line 352, ../scss/crit.scss */
+  /* line 353, ../scss/crit.scss */
   .article-body {
     padding-right: 10px;
   }
 
-  /* line 356, ../scss/crit.scss */
+  /* line 357, ../scss/crit.scss */
   .side-links {
     position: relative;
     padding-right: 40%;
   }
-  /* line 360, ../scss/crit.scss */
+  /* line 361, ../scss/crit.scss */
   .side-links .image-links {
     position: absolute;
     top: 0;
     right: 0;
     width: 40%;
   }
-  /* line 367, ../scss/crit.scss */
+  /* line 368, ../scss/crit.scss */
   .side-links .image-link {
     height: 70px;
   }
-  /* line 371, ../scss/crit.scss */
+  /* line 372, ../scss/crit.scss */
   .side-links.two-links {
     min-height: 145px;
   }
 
-  /* line 377, ../scss/crit.scss */
+  /* line 378, ../scss/crit.scss */
   .hero header {
     text-align: center;
   }
 
-  /* line 380, ../scss/crit.scss */
+  /* line 381, ../scss/crit.scss */
   .hero-content {
     min-height: 200px;
     padding-right: 210px;
   }
 
-  /* line 384, ../scss/crit.scss */
+  /* line 385, ../scss/crit.scss */
   .hero-image {
     position: absolute;
     height: 200px;
     width: 200px;
   }
 
-  /* line 390, ../scss/crit.scss */
+  /* line 391, ../scss/crit.scss */
   .skill-list {
     position: relative;
     padding-right: 50%;
   }
 
-  /* line 394, ../scss/crit.scss */
+  /* line 395, ../scss/crit.scss */
   .secondary {
     position: absolute;
     top: 0;
@@ -446,7 +447,7 @@ article .head {
   }
 }
 @media (min-width: 860px) {
-  /* line 404, ../scss/crit.scss */
+  /* line 405, ../scss/crit.scss */
   article header {
     padding-left: 0;
     padding-right: 0;

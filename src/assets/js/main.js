@@ -6,7 +6,8 @@
 
     const EVENTS = {
         CLICK: 'click',
-        SCROLL: 'scroll'
+        SCROLL: 'scroll',
+        ORIENTATION: 'deviceorientation'
     };
 
     /************
@@ -72,6 +73,74 @@
 
 
     /************
+        Toast
+    *************/
+
+    class Toast {
+        constructor () {
+            this.queue_ = [];
+            this.showing_ = null;
+            this.wrapper_ = document.getElementById('toast-container');
+
+            // When it's gone, on transition end this.done.bind(this)
+            this.wrapper_.addEventListener('transitionend', this.done.bind(this));
+            this.wrapper_.addEventListener('webkitTransitionEnd', this.done.bind(this));
+        }
+
+        queue (cheev) {
+            this.queue_.push(cheev);
+
+            this.show();
+        }
+
+        show () {
+            if (this.showing_ || !this.queue_.length) {
+                return;
+            }
+
+            this.showing_ = this.queue_.shift();
+
+            // clone a copy of the cheev
+            const cheev = this.showing_.el.cloneNode(true);
+
+            this.wrapper_.href = '#' + cheev.id;
+
+            cheev.id = '';
+
+            // Display it in the toast area
+            this.wrapper_.appendChild(cheev);
+
+            // Animate it
+            this.wrapper_.classList.add('show');
+
+        }
+
+        done () {
+            this.wrapper_.classList.remove('show');
+
+            this.wrapper_.innerHTML = '';
+
+            this.showing_ = null;
+
+            this.show();
+        }
+
+        onClick () {
+            if (!this.showing_) {
+                return;
+            }
+
+            this.scrollToCheev(this.showing_);
+        }
+
+        scrollToCheev (cheev) {
+            window.console.log(cheev);
+        }
+    }
+
+    const toast = new Toast();
+
+    /************
         Cheevs
     *************/
 
@@ -86,7 +155,9 @@
         EMAIL: 'email',
         BUSINESS: 'business',
         CARTOGRAPHER: 'cartographer',
-        HOBBIT: 'hobbit'
+        HOBBIT: 'hobbit',
+        TURTLE: 'turtle',
+        TIME: 'time'
     };
 
     const CHEEV_STATUS = {
@@ -126,7 +197,9 @@
 
         // Toast to do
         // Need a toast container.
-        toast () {}
+        toast () {
+            toast.queue(this);
+        }
 
         showComplete () {
             this.el.classList.add('enabled');
@@ -134,8 +207,8 @@
 
         complete () {
             this.data.status = CHEEV_STATUS.COMPLETE;
-            this.showComplete();
             this.toast();
+            this.showComplete();
             this.end();
         }
 
@@ -246,6 +319,11 @@
         targets: document.querySelectorAll('[data-cheev-click*="' + CHEEV_IDS.BUSINESS + '"]')
     });
 
+    cheevs[CHEEV_IDS.TURTLE] = new ClickCheev(CHEEV_IDS.TURTLE, {
+        count: 1,
+        targets: document.querySelectorAll('[data-cheev-click*="' + CHEEV_IDS.TURTLE + '"]')
+    });
+
 
     /**
      * Counts the amount of visits
@@ -273,12 +351,11 @@
         }
 
         check () {
-
             if (!window.scrollY) {
                 this.data.progress.top += 1;
             }
 
-            if (window.document.body.clientHeight === window.screen.height + window.scrollY) {
+            if (window.document.body.clientHeight < window.screen.height + window.scrollY) {
                 this.data.progress.bottom += 1;
             }
 
@@ -307,6 +384,49 @@
         top: 2,
         bottom: 1
     });
+
+    /**
+     * Checks the browser
+    //  */
+    class UserAgentCheev extends Cheev {
+        check () {
+            if (window.navigator.userAgent.toLowerCase().indexOf(this.data.criteria) !== -1) {
+                this.complete();
+            }
+            else {
+                this.end();
+            }
+        }
+    }
+
+    cheevs[CHEEV_IDS.TIME] = new UserAgentCheev(CHEEV_IDS.TIME, 'netscape');
+
+
+    // /**
+    //  * Counts the amount of visits
+    //  */
+    // class OrientationCheev extends Cheev {
+
+    //     getDefaultProgress () {
+    //         return [];
+    //     }
+
+    //     check () {
+
+    //     }
+
+    //     monitor () {
+    //         this.eventListener = this.check.bind(this);
+    //         window.addEventListener(EVENTS.ORIENTATION, this.eventListener);
+    //     }
+
+    //     stopMonitor () {
+    //         window.removeEventListener(EVENTS.ORIENTATION, this.eventListener);
+    //     }
+    // }
+    // cheevs[CHEEV_IDS.SPIN] = new OrientationCheev(CHEEV_IDS.SPIN, [
+
+    // ]);
 
 
 

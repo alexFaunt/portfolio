@@ -53,7 +53,7 @@
     }
 
     &.enabled {
-        background: $main-colour-trans;
+        background: $enabled-colour;
         text-shadow: $text-shadow-offset $text-shadow-offset $half-white;
 
         &::after {
@@ -87,15 +87,11 @@
     }
     &.stay-2::after {
         @include icon('stay');
-        -webkit-transform: rotate(40deg);
-        -moz-transform: rotate(40deg);
-        transform: rotate(40deg);
+        @include transform(rotate(40deg));
     }
     &.stay-3::after {
         @include icon('stay');
-        -webkit-transform: rotate(90deg);
-        -moz-transform: rotate(90deg);
-        transform: rotate(90deg);
+        @include transform(rotate(90deg));
     }
     &.cartographer::after {
         @include icon('cartographer');
@@ -128,3 +124,139 @@
         @include icon('hacker');
     }
 }
+
+.secret-turtle {
+    @include icon('turtle');
+
+    position: absolute;
+    left: 22px;
+    bottom: 16px;
+
+    height: $cheev-icon-size;
+    width: $cheev-icon-size;
+
+    opacity: 0.1;
+    @include transform(scale(0.3));
+}
+
+
+@-webkit-keyframes toast-anim {
+    0% {
+        @include transform(translate3d(0, 0, 0));
+    }
+
+    20% {
+        @include transform(translate3d(0, -100%, 0));
+    }
+
+    80% {
+        @include transform(translate3d(0, -100%, 0));
+    }
+
+    100% {
+        @include transform(translate3d(0, 0%, 0));
+    }
+}
+
+@-webkit-keyframes toast-anim-desktop {
+    0% {
+        @include transform(translate3d(0, 0, 0));
+    }
+
+    20% {
+        @include transform(translate3d(-100%, 0, 0));
+    }
+
+    80% {
+        @include transform(translate3d(-100%, 0, 0));
+    }
+
+    100% {
+        @include transform(translate3d(0, 0%, 0));
+    }
+}
+
+
+.toast-container {
+    position: fixed;
+    color: black;
+
+    &::after {
+        display: none;
+    }
+
+    .cheev {
+        margin: 0;
+        text-shadow: $text-shadow-offset $text-shadow-offset $half-white;
+
+        &::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            background-color: $enabled-colour;
+            opacity: 0;
+
+            -webkit-transition: opacity $cheev-anim-time/2 ease-in;
+            -moz-transition: opacity $cheev-anim-time/2 ease-in;
+            transition: opacity $cheev-anim-time/2 ease-in;
+        }
+
+        &::after {
+            -webkit-transition: opacity $cheev-anim-time/2 ease-in;
+            -moz-transition: opacity $cheev-anim-time/2 ease-in;
+            transition: opacity $cheev-anim-time/2 ease-in;
+        }
+
+        span {
+            position: relative;
+        }
+    }
+
+
+    &.show {
+        -webkit-animation-duration: $cheev-anim-time;
+        animation-duration: $cheev-anim-time;
+
+        .cheev {
+            &::before, &::after {
+                opacity: 1;
+            }
+        }
+    }
+}
+
+@media (max-width: ($max-content-width + (2 * $section-padding-horiz) - 1)) {
+    .toast-container{
+        top: 100%;
+        left: 0;
+        right: 0;
+
+        &.show {
+            -webkit-animation-name: toast-anim;
+            animation-name: toast-anim;
+        }
+    }
+}
+
+
+@media (min-width: $max-content-width + 2 * $section-padding-horiz) {
+    .toast-container {
+        top: 30px;
+        width: 400px;
+        left: 100%;
+        border: 1px solid $main-colour;
+
+        .cheev {
+            border: 0 none transparent;
+        }
+
+        &.show {
+            -webkit-animation-name: toast-anim-desktop;
+            animation-name: toast-anim-desktop;
+        }
+    }
+}
+
