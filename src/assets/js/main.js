@@ -81,10 +81,16 @@
             this.queue_ = [];
             this.showing_ = null;
             this.wrapper_ = document.getElementById('toast-container');
+            this.timeout_ = null;
 
-            // When it's gone, on transition end this.done.bind(this)
-            this.wrapper_.addEventListener('transitionend', this.done.bind(this));
-            this.wrapper_.addEventListener('webkitTransitionEnd', this.done.bind(this));
+            this.enabled_ = false;
+            window.setTimeout(this.enable.bind(this), 5000);
+        }
+
+        enable () {
+            this.enabled_ = true;
+
+            this.show();
         }
 
         queue (cheev) {
@@ -94,7 +100,7 @@
         }
 
         show () {
-            if (this.showing_ || !this.queue_.length) {
+            if (!this.enabled_ || this.showing_ || !this.queue_.length) {
                 return;
             }
 
@@ -113,9 +119,12 @@
             // Animate it
             this.wrapper_.classList.add('show');
 
+            this.timeout_ = window.setTimeout(this.done.bind(this), 5000);
         }
 
         done () {
+            this.timeout_  = null;
+
             this.wrapper_.classList.remove('show');
 
             this.wrapper_.innerHTML = '';
@@ -400,36 +409,6 @@
     }
 
     cheevs[CHEEV_IDS.TIME] = new UserAgentCheev(CHEEV_IDS.TIME, 'netscape');
-
-
-    // /**
-    //  * Counts the amount of visits
-    //  */
-    // class OrientationCheev extends Cheev {
-
-    //     getDefaultProgress () {
-    //         return [];
-    //     }
-
-    //     check () {
-
-    //     }
-
-    //     monitor () {
-    //         this.eventListener = this.check.bind(this);
-    //         window.addEventListener(EVENTS.ORIENTATION, this.eventListener);
-    //     }
-
-    //     stopMonitor () {
-    //         window.removeEventListener(EVENTS.ORIENTATION, this.eventListener);
-    //     }
-    // }
-    // cheevs[CHEEV_IDS.SPIN] = new OrientationCheev(CHEEV_IDS.SPIN, [
-
-    // ]);
-
-
-
 
     // Save to storage.
     store.flush();

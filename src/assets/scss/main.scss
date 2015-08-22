@@ -176,6 +176,42 @@
     }
 }
 
+@keyframes toast-anim {
+    0% {
+        @include transform(translate3d(0, 0, 0));
+    }
+
+    20% {
+        @include transform(translate3d(0, -100%, 0));
+    }
+
+    80% {
+        @include transform(translate3d(0, -100%, 0));
+    }
+
+    100% {
+        @include transform(translate3d(0, 0%, 0));
+    }
+}
+
+@keyframes toast-anim-desktop {
+    0% {
+        @include transform(translate3d(0, 0, 0));
+    }
+
+    20% {
+        @include transform(translate3d(-100%, 0, 0));
+    }
+
+    80% {
+        @include transform(translate3d(-100%, 0, 0));
+    }
+
+    100% {
+        @include transform(translate3d(0, 0%, 0));
+    }
+}
+
 
 .toast-container {
     position: fixed;
@@ -229,7 +265,7 @@
 }
 
 @media (max-width: ($max-content-width + (2 * $section-padding-horiz) - 1)) {
-    .toast-container{
+    .toast-container {
         top: 100%;
         left: 0;
         right: 0;
