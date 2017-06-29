@@ -2,412 +2,428 @@
 @import 'variables';
 
 * {
-    font-family: Helvetica, Arial, Sans-Serif;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    margin-top: 0;
+	font-family: Helvetica, Arial, Sans-Serif;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	margin-top: 0;
 }
 
 body {
-    margin: 0;
-    font-size: 14px;
+	margin: 0;
+	font-size: 14px;
 }
 
 .no-script .script-only {
-    display: none;
+	display: none;
 }
 
 .tranz {
-    -webkit-transform: translateZ(0);
-    -moz-transform: translateZ(0);
-    transform: translateZ(0);
+	-webkit-transform: translateZ(0);
+	-moz-transform: translateZ(0);
+	transform: translateZ(0);
 }
 
 .hidden {
-    display: none !important;
+	display: none !important;
 }
 
 %abs-before {
-    &::before {
-        content: '';
-        position: absolute;
-        display: block;
-    }
+	&::before {
+		content: '';
+		position: absolute;
+		display: block;
+	}
 }
 
 %abs-after {
-    &::after {
-        content: '';
-        position: absolute;
-        display: block;
-    }
+	&::after {
+		content: '';
+		position: absolute;
+		display: block;
+	}
 }
 
 h1, h2 {
-    display: inline-block;
-    background: $main-colour;
-    padding: 10px;
-    color: white;
-    position: relative;
-    margin-bottom: 25px;
-    text-shadow: $text-shadow-offset $text-shadow-offset $half-black;
+	display: inline-block;
+	background: $main-colour;
+	padding: 10px;
+	color: white;
+	position: relative;
+	margin-bottom: 25px;
+	text-shadow: $text-shadow-offset $text-shadow-offset $half-black;
 
-    @extend %abs-after;
+	@extend %abs-after;
 
-    &::after {
-        left: 0;
-        width: 100%;
-        height: $post-line-2-height;
-        bottom: -4px;
-        background: $main-colour;
-    }
+	&::after {
+		left: 0;
+		width: 100%;
+		height: $post-line-2-height;
+		bottom: -4px;
+		background: $main-colour;
+	}
 }
 
 h2 {
-    font-size: 1.3em;
+	font-size: 1.3em;
 }
 
 section {
-    padding: $section-padding-vert $section-padding-horiz;
-    background: white;
-    position: relative;
-    -webkit-box-sizing: content-box;
-    -moz-box-sizing: content-box;
-    box-sizing: content-box;
-    @extend %abs-before;
-    @extend %abs-after;
+	padding: $section-padding-vert $section-padding-horiz;
+	background: white;
+	position: relative;
+	-webkit-box-sizing: content-box;
+	-moz-box-sizing: content-box;
+	box-sizing: content-box;
+	@extend %abs-before;
+	@extend %abs-after;
 
-    &::before, &::after {
-        left: 0;
-        width: 100%;
-        background: inherit;
-        opacity: 0.7;
-    }
+	&::before, &::after {
+		left: 0;
+		width: 100%;
+		background: inherit;
+		opacity: 0.7;
+	}
 
-    &::before {
-        top: -10px;
-        height: $post-line-2-height;
-    }
-    &::after {
-        top: -4px;
-        height: $post-line-2-height;
-    }
+	&::before {
+		top: -10px;
+		height: $post-line-2-height;
+	}
+	&::after {
+		top: -4px;
+		height: $post-line-2-height;
+	}
 
-    &:nth-child(2n) {
-        background: #ececec;
-    }
+	&:nth-child(2n) {
+		background: #ececec;
+	}
 }
 
 a {
-    text-decoration: none;
-    color: white;
-    position: relative;
+	text-decoration: none;
+	position: relative;
 
-    @extend %abs-after;
+	@extend %abs-after;
 
-    &::after {
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        height: $post-line-1-height;
-        background: white;
-    }
+	&::after {
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		height: $post-line-1-height;
+		background: white;
+	}
 }
 
 dt, dd{
-    width: 50%;
-    padding: 0 5px;
+	width: 50%;
+	padding: 0 5px;
 }
 dt {
-    text-align: right;
+	text-align: right;
 }
 dd {
-    margin: -1.1em 0 5px 50%;
+	margin: -1.1em 0 5px 50%;
 }
 
 .screen-content {
-    max-width: $max-content-width;
-    margin: auto;
+	max-width: $max-content-width;
+	margin: auto;
 }
 
 .hero {
-    background: $main-colour;
+	background: $main-colour;
 
-    * {
-        color: white;
-        text-shadow: $text-shadow-offset $text-shadow-offset $half-black;
-    }
+	* {
+		color: white;
+		text-shadow: $text-shadow-offset $text-shadow-offset $half-black;
+	}
 
-    h1, h2 {
-        background: $trans-grey;
-        &::after {
-            background: $trans-grey;
-        }
-    }
+	h1, h2 {
+		background: $trans-grey;
+		&::after {
+			background: $trans-grey;
+		}
+	}
 
-    header {
-        text-align: right;
-    }
+	header {
+		text-align: right;
+	}
 }
 .hero-content {
-    position: relative;
+	position: relative;
 }
 .hero-image {
-    background: $trans-grey;
-    position: absolute;
-    right: 0;
-    top: 0;
-    height: $hero-image-size-small;
-    width: $hero-image-size-small;
+	background: $trans-grey;
+	position: absolute;
+	right: 0;
+	top: 0;
+	height: $hero-image-size-small;
+	width: $hero-image-size-small;
 }
 .hero-content-header {
-    display: inline-block;
+	display: inline-block;
 }
 
 .page-nav {
-    margin: -10px 0 $section-padding-vert;
+	margin: -10px 0 $section-padding-vert;
 
-    @media (min-width: 340px) {
-        a {
-            margin-right: 10px;
-        }
-    }
-    @media (min-width: 400px) {
-        text-align: center;
-        a {
-            margin: 0 10px;
-        }
-    }
+	a {
+		display: inline-block;
+		margin-bottom: 10px;
+		color: white;
+	}
+	@media (min-width: 320px) {
+		a {
+			margin-right: 10px;
+		}
+	}
+	@media (min-width: 520px) {
+		text-align: center;
+		a {
+			margin: 0 10px;
+		}
+	}
 }
 
 .image-link {
-    display: block;
-    position: relative;
-    height: $image-link-height;
-    margin-bottom: 5px;
+	display: block;
+	position: relative;
+	height: $image-link-height;
+	margin-bottom: 5px;
+	color: white;
 
-    &::after {
-        display: none;
-    }
+	&::after {
+		display: none;
+	}
 
-    &::before {
-        content: '';
-        position: absolute;
-        left: 0;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        background: $trans-grey;
-    }
+	&::before {
+		content: '';
+		position: absolute;
+		left: 0;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		background: $trans-grey;
+	}
 
-    span {
-        position: absolute;
-        left: $section-padding-horiz;
-        bottom: $section-padding-horiz;
-        @extend %abs-after;
-        text-shadow: $text-shadow-offset $text-shadow-offset $half-black;
+	span {
+		position: absolute;
+		left: $section-padding-horiz;
+		bottom: $section-padding-horiz;
+		@extend %abs-after;
+		text-shadow: $text-shadow-offset $text-shadow-offset $half-black;
 
-        &::after {
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: $post-line-1-height;
-            background: white;
-        }
-    }
+		&::after {
+			bottom: 0;
+			left: 0;
+			width: 100%;
+			height: $post-line-1-height;
+			background: white;
+		}
+	}
 }
 
 article {
-    margin-bottom: 15px;
+	margin-bottom: 15px;
 
-    header {
-        margin-bottom: 10px;
-        border-bottom: 1px solid $main-colour;
-        padding: 10px 10px 8px;
-        margin: 0 -10px 10px;
-    }
-    .head {
-        margin-bottom: 0;
-    }
+	header {
+		margin-bottom: 10px;
+		border-bottom: 1px solid $main-colour;
+		padding: 10px 10px 8px;
+		margin: 0 -10px 10px;
+	}
+	.head {
+		margin-bottom: 0;
+	}
+}
+
+ul {
+	list-style: none;
+	padding: 0;
+	a {
+		display: inline-block;
+		margin: 3px 0;
+		color: blue;
+
+		&:after {
+			background-color: blue;
+		}
+	}
 }
 
 .skill {
-    padding: 10px;
-    position: relative;
-    margin-bottom: 5px;
-    text-shadow: $text-shadow-offset $text-shadow-offset $half-white;
+	padding: 10px;
+	position: relative;
+	margin-bottom: 5px;
+	text-shadow: $text-shadow-offset $text-shadow-offset $half-white;
 
-    .value {
-        position: absolute;
-        right: 10px;
-        top: 10px;
-    }
+	.value {
+		position: absolute;
+		right: 10px;
+		top: 10px;
+	}
 
-    &[data-value="9"], &[data-value="8"] {
-        background: $skill-colour-top;
-    }
-    &[data-value="7"], &[data-value="6"]  {
-        background: $skill-colour-high;
-    }
-    &[data-value="5"], &[data-value="4"] {
-        background: $skill-colour-med;
-    }
-    &[data-value="3"], &[data-value="2"], &[data-value="1"] {
-        background: $skill-colour-low;
-    }
+	&[data-value="9"], &[data-value="8"] {
+		background: $skill-colour-top;
+	}
+	&[data-value="7"], &[data-value="6"]  {
+		background: $skill-colour-high;
+	}
+	&[data-value="5"], &[data-value="4"] {
+		background: $skill-colour-med;
+	}
+	&[data-value="3"], &[data-value="2"], &[data-value="1"] {
+		background: $skill-colour-low;
+	}
 
-    &[data-value="9"] {
-        width: 95%;
-    }
-    &[data-value="8"] {
-        width: 90%;
-    }
-    &[data-value="7"] {
-        width: 85%;
-    }
-    &[data-value="6"] {
-        width: 80%;
-    }
-    &[data-value="5"] {
-        width: 75%;
-    }
-    &[data-value="4"] {
-        width: 70%;
-    }
-    &[data-value="3"] {
-        width: 65%;
-    }
-    &[data-value="2"] {
-        width: 60%;
-    }
-    &[data-value="1"] {
-        width: 55%;
-    }
+	&[data-value="9"] {
+		width: 95%;
+	}
+	&[data-value="8"] {
+		width: 90%;
+	}
+	&[data-value="7"] {
+		width: 85%;
+	}
+	&[data-value="6"] {
+		width: 80%;
+	}
+	&[data-value="5"] {
+		width: 75%;
+	}
+	&[data-value="4"] {
+		width: 70%;
+	}
+	&[data-value="3"] {
+		width: 65%;
+	}
+	&[data-value="2"] {
+		width: 60%;
+	}
+	&[data-value="1"] {
+		width: 55%;
+	}
 }
 
 .cheev {
-    padding: $section-padding-horiz;
-    background: $grey;
-    margin: 0 0 5px;
-    min-height: $cheev-icon-size + $section-padding-horiz * 2;
-    padding-right: $cheev-icon-size + $section-padding-horiz * 2;
-    border-bottom: 1px solid $main-colour;
+	padding: $section-padding-horiz;
+	background: $grey;
+	margin: 0 0 5px;
+	min-height: $cheev-icon-size + $section-padding-horiz * 2;
+	padding-right: $cheev-icon-size + $section-padding-horiz * 2;
+	border-bottom: 1px solid $main-colour;
 
-    .name {
-        display: block;
-        font-weight: bold;
-        margin-bottom: $section-padding-horiz;
-    }
+	.name {
+		display: block;
+		font-weight: bold;
+		margin-bottom: $section-padding-horiz;
+	}
 }
 
 .contact {
-    text-align: center;
-    padding-bottom: $section-padding-vert + 10px;
+	text-align: center;
+	padding-bottom: $section-padding-vert + 10px;
 }
 .footer-link {
-    color: $main-colour;
-    text-shadow: $text-shadow-offset $text-shadow-offset $half-white;
-    margin: 0 10px;
+	color: $main-colour;
+	text-shadow: $text-shadow-offset $text-shadow-offset $half-white;
+	margin: 0 10px;
 
-    &::after {
-        background: $main-colour;
-    }
+	&::after {
+		background: $main-colour;
+	}
 }
 .lisence {
-    font-size: 10px;
-    padding: 4px;
-    color: #000;
-    position: absolute;
-    right: 0;
-    bottom: 0;
+	font-size: 10px;
+	padding: 4px;
+	color: #000;
+	position: absolute;
+	right: 0;
+	bottom: 0;
 }
 
 @media (max-width: $media-query-width-medium - 1) {
 
-    .image-link {
-        margin-left: -$section-padding-horiz;
-        margin-right: -$section-padding-horiz;
-        padding: 0 $section-padding-horiz;
-        -webkit-box-sizing: content-box;
-        -moz-box-sizing: content-box;
-        box-sizing: content-box;
-    }
+	.image-link {
+		margin-left: -$section-padding-horiz;
+		margin-right: -$section-padding-horiz;
+		padding: 0 $section-padding-horiz;
+		-webkit-box-sizing: content-box;
+		-moz-box-sizing: content-box;
+		box-sizing: content-box;
+	}
 
-    .hero p {
-        text-align: center;
-    }
+	.hero p {
+		text-align: center;
+	}
 }
 
 // BP 1
 @media (min-width: $media-query-width-medium) {
-    article {
-        .head {
-            display: inline-block;
-        }
-        .sub-head {
-            float: right;
-        }
-    }
+	article {
+		.head {
+			display: inline-block;
+		}
+		.sub-head {
+			float: right;
+		}
+	}
 
-    .article-body {
-        padding-right: $section-padding-horiz;
-    }
+	.article-body {
+		padding-right: $section-padding-horiz;
+	}
 
-    .side-links {
-        position: relative;
-        padding-right: 40%;
+	.side-links {
+		position: relative;
+		padding-right: 40%;
 
-        .image-links {
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 40%;
-        }
+		.image-links {
+			position: absolute;
+			top: 0;
+			right: 0;
+			width: 40%;
+		}
 
-        .image-link {
-            height:  $image-link-height-2;
-        }
+		.image-link {
+			height:  $image-link-height-2;
+		}
 
-        &.two-links {
-            min-height: (2 * $image-link-height-2) + 5px; // gap between is 10px;
-        }
-    }
+		&.two-links {
+			min-height: (2 * $image-link-height-2) + 5px; // gap between is 10px;
+		}
+	}
 
-    // Hero stuff
-    .hero header {
-        text-align: center;
-    }
-    .hero-content {
-        min-height: $hero-image-size;
-        padding-right: $hero-image-size + $section-padding-horiz;
-    }
-    .hero-image {
-        position: absolute;
-        height: $hero-image-size;
-        width: $hero-image-size;
-    }
+	// Hero stuff
+	.hero header {
+		text-align: center;
+	}
+	.hero-content {
+		min-height: $hero-image-size;
+		padding-right: $hero-image-size + $section-padding-horiz;
+	}
+	.hero-image {
+		position: absolute;
+		height: $hero-image-size;
+		width: $hero-image-size;
+	}
 
-    .skill-list {
-        position: relative;
-        padding-right: 50%;
-    }
-    .secondary {
-        position: absolute;
-        top: 0;
-        left: 50%;
-        right: 0;
-        padding-left: 10px;
-    }
+	.skill-list {
+		position: relative;
+		padding-right: 50%;
+	}
+	.secondary {
+		position: absolute;
+		top: 0;
+		left: 50%;
+		right: 0;
+		padding-left: 10px;
+	}
 }
 
 @media (min-width: $max-content-width + 2 * $section-padding-horiz) {
-    article header {
-        padding-left: 0;
-        padding-right: 0;
-        margin: 0 0 10px;
-    }
+	article header {
+		padding-left: 0;
+		padding-right: 0;
+		margin: 0 0 10px;
+	}
 }
-
-
-
